@@ -6,17 +6,18 @@
 
 {% block content %}
  <h1>{{question.text}}</h1>
-<form method="post">
  {%for choice in choices %}
-<td><h3><input type="checkbox"> {{ choice.text }}</h3></td><br>
+   <tr><h3><input type="checkbox"> {{ choice.text }}</h3></tr><br>
  {%endfor%}
+
  {% if end is False%}
  <a href="{% url 'next_question' %}" >
-  <button type="button" class="btn btn-success">Next question</button>
+   <button type="button" class="btn btn-success">Next question</button>
  </a>
  {%else%}
- <a href="{% url 'results' %}" >
-  <button type="button" class="btn btn-success">Show Results</button>
- </a>
+  <a href="{% url 'results' %}" >
+   <button type="button" class="btn btn-success">Show Results</button>
+  </a>
  {% endif %}
+
 {% endblock%}

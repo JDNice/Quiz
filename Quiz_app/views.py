@@ -12,8 +12,6 @@ def start(request):
 
 
 def question(request):
-    #form = AnswerForm()
-    #context = {'form':form}
     if TestQuiz.question_id < len(TestQuiz.quiz_dto.questions):
         end = False
     elif TestQuiz.question_id == len(TestQuiz.quiz_dto.questions):

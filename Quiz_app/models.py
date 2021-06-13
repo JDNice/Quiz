@@ -2,10 +2,12 @@ from typing import List
 
 from django.db import models
 
+
 class MultipleChoiceAnswer(models.Model):
     answer = models.TextField('Answer')
+
     def __str__(self):
-        return  self.answer
+        return self.answer
 
 
 class MultipleChoice(models.Model):
@@ -15,6 +17,7 @@ class MultipleChoice(models.Model):
 
     def __str__(self):
         return self.question
+
 
 class Quiz(models.Model):
     tittle = models.CharField('Title', max_length=100)
