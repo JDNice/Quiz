@@ -5,6 +5,17 @@
 {% endblock %}
 
 {% block content %}
- <h1>Question</h1>
-<td><input type="checkbox"></td>
+ <h1>{{question.text}}</h1>
+ {%for choice in choices %}
+<td><h3><input type="checkbox"> {{ choice.text }}</h3></td><br>
+ {%endfor%}
+ {% if end is False%}
+ <a href="{% url 'next_question' %}" >
+  <button type="button" class="btn btn-success">Next question</button>
+ </a>
+ {%else%}
+ <a href="{% url 'results' %}" >
+  <button type="button" class="btn btn-success">Show Results</button>
+ </a>
+ {% endif %}
 {% endblock%}

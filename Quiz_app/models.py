@@ -20,5 +20,9 @@ class Quiz(models.Model):
     tittle = models.CharField('Title', max_length=100)
     questions = models.ManyToManyField(MultipleChoice)
 
+    class Meta:
+        verbose_name = 'Quiz'
+        verbose_name_plural = 'Quizzes'
+
     def __str__(self):
         return self.tittle

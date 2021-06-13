@@ -5,5 +5,10 @@ Main page
 {% endblock %}
 
 {% block content %}
- <h1>Welcome, to Python Quiz!</h1>
+<center>
+    <h1> Welcome to: {{quizname}}</h1>
+    <a href="{% url 'question' %}" >
+     <button type="button" class="btn btn-success">Begin Quiz</button>
+    </a>
+ </center>
 {% endblock%}

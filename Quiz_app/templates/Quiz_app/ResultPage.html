@@ -1,0 +1,15 @@
+{% extends 'Quiz_app/base.html'%}
+
+{% block title %}
+Results page
+{% endblock %}
+
+{% block content %}
+<center>
+    <h1> You finished: {{quizname}}</h1>
+    <h2>Your score: {{score}}</h2>
+    <a href="{% url 'home' %}">
+     <button type="button" class="btn btn-success">Rerun Quiz</button>
+    </a>
+ </center>
+{% endblock%}
