@@ -6,6 +6,7 @@
 
 {% block content %}
  <h1>{{question.text}}</h1>
+<form method="post">
  {%for choice in choices %}
 <td><h3><input type="checkbox"> {{ choice.text }}</h3></td><br>
  {%endfor%}
