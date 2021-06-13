@@ -70,5 +70,4 @@ class BaseTestCase(TestCase):
             self.quiz_dto,
             answers_dto
         )
-
         self.assertEqual(quiz_result_service.get_result(), 0.00)
