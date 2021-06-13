@@ -1,7 +1,7 @@
 from django.test import TestCase
 from typing import List
-from .services import QuizResultService
-from .dto import ChoiceDTO, QuestionDTO, QuizDTO, AnswerDTO, AnswersDTO
+from Quiz_app.services import QuizResultService
+from Quiz_app.dto import ChoiceDTO, QuestionDTO, QuizDTO, AnswerDTO, AnswersDTO
 
 
 class BaseTestCase(TestCase):
