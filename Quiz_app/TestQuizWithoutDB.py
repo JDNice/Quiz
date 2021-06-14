@@ -2,7 +2,7 @@ from .dto import *
 from .services import QuizResultService
 
 
-# 1-b;2-a;3-a;4-c,d;5-a,c
+# 1-b;2-a;3-a;4-c,d;5-a,c - правильные ответы
 class TestQuiz:
     question_id = 0
     choices: List[ChoiceDTO] = [
@@ -92,7 +92,7 @@ class TestQuiz:
         ChoiceDTO(
             "1-5-1",
             "PhP",
-            False
+            True
         ),
         ChoiceDTO(
             "1-5-2",
@@ -101,13 +101,13 @@ class TestQuiz:
         ),
         ChoiceDTO(
             "1-5-3",
-            "AVR Assembly",
+            "Ruby",
             True
         ),
         ChoiceDTO(
             "1-5-4",
-            "Ruby",
-            True
+            "AVR Assembly",
+            False
         ),
     ]
 
@@ -145,19 +145,10 @@ class TestQuiz:
         questions
     )
 
-    answers: List[AnswerDTO] = [
-        AnswerDTO(
-            "1-1",
-            ["1-1-1"]
-        )
-    ]
+    answers: List[AnswerDTO] = []
 
     answers_dto = AnswersDTO(
         "1",
         answers
     )
 
-    quiz_result_service = QuizResultService(
-        quiz_dto,
-        answers_dto
-    )

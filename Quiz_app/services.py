@@ -8,7 +8,7 @@ class QuizResultService():
         self.answers_dto = answers_dto
 
     def get_result(self) -> float:
-        if self.quiz_dto.uuid == self.answers_dto.quiz_uuid:
+        if self.quiz_dto.uuid == self.answers_dto.quiz_uuid:#проверка, что ответы для нужного теста
             right_answers = 0
             for question in self.quiz_dto.questions:        # найти количество правильных ответов
                 for answer in self.answers_dto.answers:

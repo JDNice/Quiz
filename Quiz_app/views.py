@@ -14,7 +14,6 @@ def start(request):
 def question(request):
     if request.method == 'POST':
         if 'answer' in request.POST :
-            print(request.POST)
             TestQuiz.question_id += 1
             answers = request.POST.getlist('answer')
             answered_question = request.POST['c_question']
@@ -35,5 +34,7 @@ def question(request):
 
 def result(request):
     TestQuiz.question_id = 0
-    print(TestQuiz.answers)
-    return render(request, 'Quiz_app/ResultPage.html', {'score': TestQuiz.quiz_result_service.get_result()})
+    qrs = QuizResultService(TestQuiz.quiz_dto,TestQuiz.answers_dto)
+    score = qrs.get_result()
+    TestQuiz.answers =[]
+    return render(request, 'Quiz_app/ResultPage.html', {'score': score})
