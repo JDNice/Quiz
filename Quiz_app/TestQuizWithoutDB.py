@@ -1,6 +1,8 @@
 from .dto import *
 from .services import QuizResultService
+from typing import List, NamedTuple
 
+from Quiz_app.services import QuizResultService
 
 # 1-b;2-a;3-a;4-c,d;5-a,c - правильные ответы
 class TestQuiz:
@@ -145,7 +147,7 @@ class TestQuiz:
         questions
     )
 
-    answers: List[AnswerDTO] = []
+    answers: List[AnswerDTO]=[]
 
     answers_dto = AnswersDTO(
         "1",
