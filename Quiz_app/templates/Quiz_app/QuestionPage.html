@@ -8,7 +8,7 @@
 <form action="{% url 'question' %}" method="post" >
     <input type="text" name ="c_question" value={{question.uuid}} style="display: none"><h1>{{question.text}}</h1></input>
 {%for choice in choices %}
-<tr><h3><input type="checkbox" name="answer" value={{choice.uuid}}> {{ choice.text }}</h3></tr><br>
+<tr><h3><input type="checkbox" name="answer" value={{choice.uuid}} style="transform: scale(1.5)"> {{ choice.text }}</h3></tr><br>
 {%endfor%}
 
      {% csrf_token %}

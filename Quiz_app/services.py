@@ -10,6 +10,7 @@ class QuizResultService():
     def get_result(self) -> float:
         if self.quiz_dto.uuid == self.answers_dto.quiz_uuid:  # проверка, что ответы для нужного теста
             right_answers = 0
+            print(self.answers_dto.answers)
             for answer in self.answers_dto.answers:
                 for question in self.quiz_dto.questions:
                     if answer.question_uuid == question.uuid:  # нашли нужный вопрос
