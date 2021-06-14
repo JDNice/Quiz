@@ -10,105 +10,105 @@ class TestQuiz:
     choices: List[ChoiceDTO] = [
         ChoiceDTO(
             "1-1-1",
-            "Вещественная переменная",
+            "A. Вещественная переменная",
             False
         ),
         ChoiceDTO(
             "1-1-2",
-            "Целочисленная переменная",
+            "B. Целочисленная переменная",
             True
         ),
         ChoiceDTO(
             "1-1-3",
-            "Логическая переменная",
+            "C. Логическая переменная",
             False
         ),
         ChoiceDTO(
             "1-1-4",
-            "Символьная строка",
+            "D. Символьная строка",
             False
         ),
 
         ChoiceDTO(
             "1-2-1",
-            "Вещественная переменная",
+            "A. Вещественная переменная",
             True
         ),
         ChoiceDTO(
             "1-2-2",
-            "Целочисленная переменная",
+            "B. Целочисленная переменная",
             False
         ),
         ChoiceDTO(
             "1-2-3",
-            "Логическая переменная",
+            "C. Логическая переменная",
             False
         ),
         ChoiceDTO(
             "1-2-4",
-            "Символьная строка",
+            "D. Символьная строка",
             False
         ),
 
         ChoiceDTO(
             "1-3-1",
-            "Логическая переменная",
+            "A. Логическая переменная",
             True
         ),
         ChoiceDTO(
             "1-3-2",
-            "Целочисленная переменная",
+            "B. Целочисленная переменная",
             False
         ),
         ChoiceDTO(
             "1-3-3",
-            "Вещественная переменная",
+            "C. Вещественная переменная",
             False
         ),
         ChoiceDTO(
             "1-3-4",
-            "Символьная строка",
+            "D. Символьная строка",
             False
         ),
 
         ChoiceDTO(
             "1-4-1",
-            "string",
+            "A. string",
             False
         ),
         ChoiceDTO(
             "1-4-2",
-            "char",
+            "B. char",
             False
         ),
         ChoiceDTO(
             "1-4-3",
-            "bool",
+            "C. bool",
             True
         ),
         ChoiceDTO(
             "1-4-4",
-            "float",
+            "D. float",
             True
         ),
         ChoiceDTO(
             "1-5-1",
-            "PhP",
+            "A. PhP",
             True
         ),
         ChoiceDTO(
             "1-5-2",
-            "C#",
+            "B. C#",
             False
         ),
         ChoiceDTO(
             "1-5-3",
-            "Ruby",
+            "C. Ruby",
             True
         ),
         ChoiceDTO(
             "1-5-4",
-            "AVR Assembly",
+            "D. AVR Assembly",
             False
         ),
     ]

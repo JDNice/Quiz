@@ -10,16 +10,15 @@ class QuizResultService():
     def get_result(self) -> float:
         if self.quiz_dto.uuid == self.answers_dto.quiz_uuid:  # проверка, что ответы для нужного теста
             right_answers = 0
-            print(self.answers_dto.answers)
             for answer in self.answers_dto.answers:
                 for question in self.quiz_dto.questions:
                     if answer.question_uuid == question.uuid:  # нашли нужный вопрос
                         choosen_variants = answer.choices
                         needed_variants = []
-                        for choice in question.choices:
+                        for choice in question.choices:#смотрим все его правильные ответы
                             if choice.is_correct and answer.question_uuid + '-' in choice.uuid:
                                 needed_variants.append(choice.uuid)
-                        if choosen_variants == needed_variants:
+                        if choosen_variants == needed_variants:#наши ответы совпадают с правильными?
                             right_answers += 1
             return right_answers / len(self.quiz_dto.questions)
         else:
