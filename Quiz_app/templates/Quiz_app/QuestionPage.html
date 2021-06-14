@@ -5,19 +5,19 @@
 {% endblock %}
 
 {% block content %}
- <h1>{{question.text}}</h1>
- {%for choice in choices %}
-   <tr><h3><input type="checkbox"> {{ choice.text }}</h3></tr><br>
- {%endfor%}
+<form action="{% url 'question' %}" method="post" >
+    <input type="text" name ="c_question" value={{question.uuid}} >{{question.text}}</input>
+{%for choice in choices %}
+<tr><h3><input type="checkbox" name="answer" value={{choice.uuid}}> {{ choice.text }}</h3></tr><br>
+{%endfor%}
 
- {% if end is False%}
- <a href="{% url 'next_question' %}" >
-   <button type="button" class="btn btn-success">Next question</button>
- </a>
- {%else%}
-  <a href="{% url 'results' %}" >
-   <button type="button" class="btn btn-success">Show Results</button>
-  </a>
- {% endif %}
-
+     {% csrf_token %}
+     {% if end is False%}
+            <button type="submit" class="btn btn-success">Next question</button>
+     {%else%}
+        <a href="{% url 'results' %}" >
+            <button type="submit" class="btn btn-success">Show Results</button>
+        </a>
+     {% endif %}
+</form>
 {% endblock%}

@@ -12,6 +12,13 @@ def start(request):
 
 
 def question(request):
+    if request.method == 'POST':
+        if 'answer' in request.POST :
+            print(request.POST)
+            TestQuiz.question_id += 1
+            answers = request.POST.getlist('answer')
+            answered_question = request.POST['c_question']
+            TestQuiz.answers.append(AnswerDTO(answered_question,answers))
     if TestQuiz.question_id < len(TestQuiz.quiz_dto.questions):
         end = False
     elif TestQuiz.question_id == len(TestQuiz.quiz_dto.questions):
@@ -26,11 +33,7 @@ def question(request):
                                                           'end': end})
 
 
-def next_question(request):
-    TestQuiz.question_id += 1
-    return question(request)
-
-
 def result(request):
     TestQuiz.question_id = 0
+    print(TestQuiz.answers)
     return render(request, 'Quiz_app/ResultPage.html', {'score': TestQuiz.quiz_result_service.get_result()})
