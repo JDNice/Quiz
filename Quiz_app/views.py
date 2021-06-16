@@ -10,12 +10,12 @@ def start(request):
 
 def question(request):
     if request.method == 'POST':
-        print(request.POST)
         if 'answer' in request.POST:
-            TestQuiz.question_id += 1
-            answers = request.POST.getlist('answer')
-            answered_question = request.POST['c_question']
-            TestQuiz.answers_dto.answers.append(AnswerDTO(answered_question, answers))
+            if request.POST['c_question'] ==TestQuiz.quiz_dto.questions[TestQuiz.question_id].uuid:
+                TestQuiz.question_id += 1
+                answers = request.POST.getlist('answer')
+                answered_question = request.POST['c_question']
+                TestQuiz.answers_dto.answers.append(AnswerDTO(answered_question, answers))
     if TestQuiz.question_id < len(TestQuiz.quiz_dto.questions):
         end = False
     else:
